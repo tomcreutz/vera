@@ -40,13 +40,12 @@ if(VERA_USE_SYSTEM_BOOST)
   set(Boost_TARGET)
 else()
   include(ExternalProject)
-
-  set(BOOST_MIRROR dl.bintray.com CACHE STRING
+  set(BOOST_MIRROR boostorg.jfrog.io CACHE STRING
     "Host used to download boost. Use it to force a specific mirror.")
   mark_as_advanced(BOOST_MIRROR)
 
   set(Boost_VERSION 1.69.0)
-  set(Boost_URL "https://${BOOST_MIRROR}/boostorg/release/1.69.0/source/boost_1_69_0.tar.bz2")
+  set(Boost_URL "https://${BOOST_MIRROR}/artifactory/main/release/1.69.0/source/boost_1_69_0.tar.bz2")
   set(Boost_URL_HASH "SHA256=8f32d4617390d1c2d16f26a27ab60d97807b35440d45891fa340fc2648b04406")
 
   string(REPLACE "python27" "python" boostLibs "${boostLibs}")
